@@ -10,11 +10,13 @@ class Form {
       container.classList.add("container");
       chatWindow.classList.add('chatWindow');
       chatWindow.dataset.atribute='chatWindow';
+      
 
   
       document.body.appendChild(container);
       container.appendChild(chatWindow);
       container.appendChild(form);
+      // chatWindow.scrollIntoView();
 
       
     const input = new Input(form);

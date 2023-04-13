@@ -6,6 +6,7 @@ class ChatMessage {
     init(){
       const message = document.createElement('div');
       message.textContent = this.string;
+      
       this.parent.appendChild(message);
     }
 

@@ -4,7 +4,7 @@ class Chat {
     this.form = new Form().init();
     this.chatMessage = new ChatMessage();
   }
-  on() {
+  activateChat() {
     const chatWindow = document.querySelector("[data-atribute= 'chatWindow']");
     this.form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -27,6 +27,6 @@ class Chat {
 }
 
 const chat = new Chat();
-chat.on();
+chat.activateChat();
 
 
