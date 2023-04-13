@@ -1,26 +1,18 @@
 class ChatBot {
+  constructor(arrOfAnswers) {
+    this.answers = arrOfAnswers;
+  }
 
-  answer() {
+  getRandomAnswerWithDelay() {
+    return new Promise((resolve) => {
+      const randomIndex = Math.floor(Math.random() * this.answers.length);
+      const randomDelay = Math.floor(Math.random() * 3000);
 
-    const arrOfAnswers = [
-      "ПЕРВОЕ СООБЩЕНИЕ",
-      "ВТОРОЕ СООБЩЕНИЕ",
-      "ТРЕТЬЕ СООБЩЕНИЕ?",
-    ];
+      setTimeout(() => resolve("Бot: " + this.answers[randomIndex]), randomDelay);
+    });
+  }
 
-    function getRandomAnswerWithDelay(arrOfAnswers) {
-      return new Promise((resolve) => {
-        const randomIndex = Math.floor(Math.random() * arrOfAnswers.length);
-        const randomDelay = Math.floor(Math.random() * 3000);
-
-        setTimeout(
-          () => resolve(arrOfAnswers[randomIndex]),
-          randomDelay
-        );
-      });
-    }
-    return getRandomAnswerWithDelay(arrOfAnswers).then((answer)=> console.log(answer));
+  answerOn() {
+    return this.getRandomAnswerWithDelay();
   }
 }
-
-
