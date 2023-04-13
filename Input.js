@@ -1,10 +1,12 @@
 class Input {
-  constructor() {}
+  constructor(parent) {
+    this.parent = parent;
+  }
   init() {
     const input = document.createElement("input");
     input.setAttribute("type", "text");
     input.setAttribute("name", "input");
     input.classList.add("input");
-    return input;
+    return this.parent.appendChild(input);
   }
 }

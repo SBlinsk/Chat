@@ -2,8 +2,6 @@
 class Chat {
   constructor() {
     this.form = new Form().init();
-    // this.input = new Input();
-    // this.buttom = new Button();
     this.chatMessage = new ChatMessage();
   }
   on() {

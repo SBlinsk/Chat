@@ -1,7 +1,6 @@
 class Form {
-    constructor() {
-      this.input = new Input();
-      this.button = new Button();
+    constructor(parent) {
+  this.parent =parent;
       //
     }
     init() {
@@ -16,8 +15,14 @@ class Form {
       document.body.appendChild(container);
       container.appendChild(chatWindow);
       container.appendChild(form);
-      form.appendChild(this.input.init());
-      form.appendChild(this.button.init());
+
+      
+    const input = new Input(form);
+    input.init();
+      // form.appendChild(this.input.init());
+      const button = new Button(form);
+      button.init();
+      // form.appendChild(this.button.init());
       return container;
     }
   }
