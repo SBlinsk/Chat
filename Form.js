@@ -9,10 +9,7 @@ class Form {
       const chatWindow = document.createElement("div");
       const form = document.createElement("form");
       container.classList.add("container");
-  
-      chatWindow.style.width = "250px";
-      chatWindow.style.height = "250px";
-      chatWindow.style.border = "1px solid black";
+      chatWindow.classList.add('chatWindow');
       chatWindow.dataset.atribute='chatWindow';
 
   

@@ -4,9 +4,7 @@ class Input {
     const input = document.createElement("input");
     input.setAttribute("type", "text");
     input.setAttribute("name", "input");
-
-    input.style.width = "198px";
+    input.classList.add("input");
     return input;
   }
 }
-
