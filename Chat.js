@@ -6,6 +6,8 @@ class Chat {
   }
   activateChat() {
     const chatWindow = document.querySelector("[data-atribute= 'chatWindow']");
+
+    console.log(chatWindow);
     this.form.addEventListener("submit", async (event) => {
       event.preventDefault();
       let value = event.target.input.value;

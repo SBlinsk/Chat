@@ -8,6 +8,7 @@ class ChatMessage {
       message.textContent = this.string;
       
       this.parent.appendChild(message);
+
     }
 
   }
