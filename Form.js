@@ -24,6 +24,7 @@ class Form {
     message.init();
     this.input.clear();
   }
+  
   getFormElement() {
     return this.formElement;
   }
