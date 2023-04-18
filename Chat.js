@@ -14,12 +14,11 @@ class Chat {
     const formElement = this.form.getFormElement();
     formElement.addEventListener("submit", async (event) => {
       this.form.onSubmit(event);
-   
-
-      this.answer.answerOn().then((answerText) => {
-        const answerMessage = new ChatMessage(answerText, this.chatWindow);
-        answerMessage.init();
-      });
+      const answerMessage = new ChatMessage(
+        await this.answer.answerOn(),
+        this.chatWindow
+      );
+      answerMessage.init();
     });
   }
 }
