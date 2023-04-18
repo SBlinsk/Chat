@@ -1,10 +1,8 @@
 class Button {
   constructor(parent) {
     this.parent = parent;
-  }
-  init() {
-    const button = document.createElement("button");
-    button.textContent = "Send";
-    return this.parent.appendChild(button);
+    this.button = document.createElement("button");
+    this.button.textContent = "Send";
+    this.parent.appendChild(this.button);
   }
 }

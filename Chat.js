@@ -1,22 +1,14 @@
 "use strict";
 class Chat {
   constructor() {
-    this.form = new Form().init();
+    this.form = new Form();
     this.chatMessage = new ChatMessage();
-    this.chatWindow = this.form.firstChild;
+    this.chatWindow = this.form.chatWindow;
   }
   activateChat() {
-    // const chatWindow = document.querySelector("[data-atribute= 'chatWindow']");
-    // const chatWindow = this.chatWindow
-    // console.log(chatWindow);
-
-
-    this.form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      let value = event.target.input.value;
-      const message = new ChatMessage("Я:"+value, this.chatWindow);
-      message.init();
-      event.target.input.value="";
+    const formElement = this.form.getFormElement();
+    formElement.addEventListener("submit", async (event) => {
+      this.form.onSubmit(event);
       let answer = new ChatBot([
         "ПЕРВОЕ СООБЩЕНИЕ",
         "ВТОРОЕ СООБЩЕНИЕ",
@@ -33,5 +25,3 @@ class Chat {
 
 const chat = new Chat();
 chat.activateChat();
-
-
