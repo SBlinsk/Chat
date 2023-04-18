@@ -3,18 +3,14 @@ class ChatBot {
     this.answers = arrOfAnswers;
   }
 
-  getRandomAnswerWithDelay() {
-    return new Promise((resolve) => {
-      const randomIndex = getRandomNumber(0, this.answers.length);
-      const randomDelay = getRandomNumber(0, 3000);
-      console.log(randomIndex);
-      console.log(randomDelay);
+  async getRandomAnswerWithDelay() {
+    const randomIndex = getRandomNumber(0, this.answers.length);
+    const randomDelay = getRandomNumber(0, 3000);
+    console.log(randomIndex);
+    console.log(randomDelay);
 
-      setTimeout(
-        () => resolve("Бot: " + this.answers[randomIndex]),
-        randomDelay
-      );
-    });
+    await wait(randomDelay);
+    return "Бot: " + this.answers[randomIndex];
   }
 
   answerOn() {
@@ -24,4 +20,7 @@ class ChatBot {
 
 function getRandomNumber(start, end) {
   return Math.floor(Math.random() * (end - start) + start);
+}
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
