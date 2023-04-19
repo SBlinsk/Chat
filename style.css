@@ -1,0 +1,9 @@
+.chatWindow {
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+  overflow-y: auto;
+}
+.input {
+  width: 198px;
+}
